@@ -17,9 +17,9 @@ async def deleteUser(userId:int):
     return user.deleteUser(userId)
 
 @router.post("/user")
-async def postUser(user:User):
-    return user.postUser(user)
+async def postUser(item:User):
+    return user.postUser(item)
 
 @router.put("/user")
-async def putUser(user:User):
-    return user.putUser(user)
+async def putUser(item:User):
+    return user.putUser(item)

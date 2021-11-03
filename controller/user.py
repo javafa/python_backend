@@ -8,7 +8,7 @@ from controller.request import User
 def getUsers(page:int=0, page_size:int=25):
     response = ResponseBase
     with sessionScope() as db:
-        userList = repo_user.getUser(page, page_size, db)
+        userList = repo_user.getUsers(page, page_size, db)
         if not userList is None:
             response["data"] = jsonable_encoder(userList)
         else :
@@ -28,7 +28,7 @@ def getUser(userId:int):
 def postUser(user:User):
     response = ResponseBase
     with sessionScope() as db:
-        result = repo_user.postUser(user, db)
+        result = repo_user.postUser(user.toModel(), db)
         if result :
             response["data"] = jsonable_encoder(user)
         else :
@@ -48,7 +48,7 @@ def deleteUser(userId:int):
 def putUser(user:User):
     response = ResponseBase
     with sessionScope() as db:
-        result = repo_user.putUser(user, db)
+        result = repo_user.putUser(user.toModel(), db)
         if result :
             response["data"] = jsonable_encoder(user)
         else :

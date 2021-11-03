@@ -1,10 +1,10 @@
 from sqlalchemy.sql.sqltypes import Integer
-from repository.models import models
+from repository import models
 from sqlalchemy.orm import Session
 from typing import List
 
 # user ######################################################
-def getUsers(page:int, page_size:int = 25, db: Session):
+def getUsers(page:int, page_size:int, db: Session):
     if page is None :
         page = 0
     else :
@@ -15,7 +15,7 @@ def getUsers(page:int, page_size:int = 25, db: Session):
     # query = query.filter(table.user_hash == user_hash) // 차 후 필터 적용 필요
     return query.limit(page_size).offset(page*page_size).all()
 
-def getUser(userId:int, db: Session)
+def getUser(userId:int, db: Session) :
     table = models.User
     query = db.query(table)
     query = query.filter(table.id == userId)
@@ -30,10 +30,9 @@ def deleteUser(userId:int, db: Session):
     else :
         return False
 
-def postUser(user:models.User, db: Session, datetime = datetime.now(timezone.utc)):
+def postUser(user:models.User, db: Session):
     db.add(user)
     db.flush()
-    db.refresh(user)
     return user
 
 def putUser(user:models.User, db: Session):

@@ -5,7 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from repository import models
 from repository.database import engine
 
-from router import router_shop, router_root
+from router import router_user, router_root
 
 import config
 import uvicorn
@@ -39,7 +39,7 @@ app.include_router(
 
 # user
 app.include_router(
-    router_shop.router,
+    router_user.router,
     prefix="/user",
     tags=["user"],
     responses={404: {"description": "File Not found"}},
