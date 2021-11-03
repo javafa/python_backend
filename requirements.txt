@@ -1,0 +1,25 @@
+# basic
+fastapi
+mysql-connector-python
+sqlalchemy
+uvicorn
+
+# send google mail
+#fastapi_mail
+
+# auth
+#pyjwt
+#passlib
+
+# generate activation code 6 digit
+#numpy
+
+# for aws
+#boto3
+#awscli
+
+# image
+#pillow
+
+# find country code by ip
+#IP2Location
