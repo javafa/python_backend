@@ -31,11 +31,11 @@ app.add_middleware(
 models.Base.metadata.create_all(bind=engine)
 
 # home
-app.include_router(
-    router_root.router,
-    tags=["root"],
-    responses={404: {"description": "File Not found"}},
-)
+# app.include_router(
+#     router_root.router,
+#     tags=["root"],
+#     responses={404: {"description": "File Not found"}},
+# )
 
 # user
 app.include_router(
