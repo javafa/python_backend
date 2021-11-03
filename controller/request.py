@@ -4,7 +4,7 @@ from typing import Optional
 from repository import models
 
 class User(BaseModel):
-    id : int                = Field(None)
+    id : int                = Field(None, description="POST 에는 사용하지 않는다")
     email : str             = Field(min_length=5, max_length=255, description="이메일")
     name : str              = Field(min_length=2, max_length=5, description="이름 5자 이하")
     age : Optional[int]     = Field(None, gt=0, lt=150, description="나이")
