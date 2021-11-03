@@ -12,7 +12,7 @@ import uvicorn
 
 app = FastAPI(
     title="Flow9 REST Sample",
-    description="RESTful API 테스트를 위한 페이지 입니다.",
+    description="RESTful API 테스트를 위한 페이지 입니다. (데이터가 주기적으로 삭제됩니다)",
     version="0.1.0",
 )
 
